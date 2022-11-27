@@ -13,7 +13,17 @@ export class GameComponent implements OnInit {
   constructor(private gameData: GameServiceService) { 
     gameData.getGames().subscribe((data)=>
     {
-      console.warn("Games : ",data);      
+      console.warn("All Games : ",data);      
+    });
+
+    gameData.getGamesByName("T").subscribe((data)=>
+    {
+      console.warn("Games By Name : ",data);      
+    });
+
+    gameData.getGamesById(4).subscribe((data)=>
+    {
+      console.warn("Game By Id : ",data);      
     });
   }
 

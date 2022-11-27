@@ -8,8 +8,20 @@ export class GameServiceService {
 
   constructor(private http: HttpClient) { }
 
+  apiUrl:string="http://localhost:12969/api/game/";
+
   getGames()
   {
-    return this.http.get("http://localhost:12969/api/game/");
+    return this.http.get(this.apiUrl);
+  }
+
+  getGamesByName(name:string)
+  {
+    return this.http.get(this.apiUrl+"SearchedGames?value="+name);
+  }
+
+  getGamesById(id:number)
+  {
+    return this.http.get(this.apiUrl+"SearchedGamesById/"+id);
   }
 }
