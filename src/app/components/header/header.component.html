@@ -8,17 +8,19 @@
                     <a class="nav-link" href="#">Games</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contact Us</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Support</a>
-                        <a class="dropdown-item" href="#">News</a>
-                        <a class="dropdown-item" href="#">FAQ</a>
-                        <a class="dropdown-item" href="#">About Us</a>
-                    </div>
+                    <a class="nav-link" href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                        routerLink="ContactUs">Contact Us</a>  
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" routerLink="Support">Support</a>
+                            <a class="dropdown-item" routerLink="News">News</a>
+                            <a class="dropdown-item" routerLink="FAQ">FAQ</a>
+                            <a class="dropdown-item" routerLink="AboutUs">About Us</a>
+                        </div>                  
                 </li>
             </ul>
             <div class="mx-auto order-0 d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search Game" aria-label="Search" style="width:400px;">
+                <input class="form-control me-2" type="search" placeholder="Search Game" aria-label="Search"
+                    style="width:400px;">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </div>
             <ul class="navbar-nav">
@@ -32,3 +34,4 @@
         </div>
     </div>
 </nav>
+<router-outlet></router-outlet>
