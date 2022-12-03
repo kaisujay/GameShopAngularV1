@@ -14,22 +14,24 @@ export class GameServiceService {
 
   getGames()
   {
-    return this.http.get(this.apiUrl);
+    return this.http.get<game[]>(this.apiUrl);
   }
 
-  getGamesByName(name:string)
+  getGamesByName(name:string) : Observable<game[]>
   {
-    return this.http.get<any[]>(this.apiUrl+"SearchedGames?value="+name).pipe(
-      map(o => o.map((sp): game => ({
-        Name: sp.name,
-        Price: sp.price,
-          GameDetails: sp.gameDetails, // error here
-      })))
-    );    
+    return this.http.get<game[]>(this.apiUrl+"SearchedGames?value="+name);
+    //This also Works
+    // return this.http.get<any[]>(this.apiUrl+"SearchedGames?value="+name).pipe(
+    //   map(o => o.map((sp): game => ({
+    //     Name: sp.name,
+    //     Price: sp.price,
+    //       GameDetails: sp.gameDetails,
+    //   })))
+    // );    
   }
 
   getGamesById(id:number)
   {
-    return this.http.get(this.apiUrl+"SearchedGamesById/"+id);
+    return this.http.get<game>(this.apiUrl+"SearchedGamesById/"+id);
   }
 }

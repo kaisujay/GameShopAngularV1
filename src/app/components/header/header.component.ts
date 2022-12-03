@@ -9,20 +9,10 @@ import { GameServiceService } from 'src/app/services/game/game-service.service';
 })
 export class HeaderComponent implements OnInit {
   
-  games:game[]=[];
-
-  constructor(private gameData: GameServiceService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  getSearchedGames(value:string){
-    this.gameData.getGamesByName(value).subscribe((data)=>
-    {
-      this.games=data; 
-    }
-
-    )
-  }
 
 }

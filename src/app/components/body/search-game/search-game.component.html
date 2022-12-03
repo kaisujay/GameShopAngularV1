@@ -1,0 +1,6 @@
+<div class="input-group">
+    <input type="search" class="form-control rounded" #searchTextBox 
+    placeholder="Search Games ..." style="width:550px;"/>
+    <button type="button" class="btn btn-outline-primary"
+        (click)="getSearchedGames(searchTextBox.value)">Search</button>
+</div>

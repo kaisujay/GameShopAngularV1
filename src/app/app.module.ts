@@ -15,6 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactusComponent } from './components/header/contactus/contactus.component';
 import { PlayerComponent } from './components/header/player/player.component';
+import { SearchGameComponent } from './components/body/search-game/search-game.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PlayerComponent } from './components/header/player/player.component';
     FaqComponent,
     HeaderComponent,
     ContactusComponent,
-    PlayerComponent  
+    PlayerComponent,
+    SearchGameComponent  
   ],
   imports: [
     BrowserModule,
