@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GameComponent } from './components/header/game/game.component';
+import { GameComponent } from './components/body/game/game.component';
 import { LoginComponent } from './components/header/player/login/login.component';
 import { RegisterComponent } from './components/header/player/register/register.component';
 import { AboutusComponent } from './components/header/contactus/aboutus/aboutus.component';

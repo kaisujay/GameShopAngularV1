@@ -4,7 +4,7 @@ import { AboutusComponent } from './components/header/contactus/aboutus/aboutus.
 import { FaqComponent } from './components/header/contactus/faq/faq.component';
 import { NewsComponent } from './components/header/contactus/news/news.component';
 import { SupportComponent } from './components/header/contactus/support/support.component';
-import { GameComponent } from './components/header/game/game.component';
+import { GameComponent } from './components/body/game/game.component';
 
 const routes: Routes = [
   { path: 'Support', component: SupportComponent },
