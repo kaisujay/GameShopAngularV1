@@ -11,6 +11,7 @@ import { AboutusComponent } from './components/header/contactus/aboutus/aboutus.
 import { SupportComponent } from './components/header/contactus/support/support.component';
 import { NewsComponent } from './components/header/contactus/news/news.component';
 import { FaqComponent } from './components/header/contactus/faq/faq.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FaqComponent } from './components/header/contactus/faq/faq.component';
     AboutusComponent,
     SupportComponent,
     NewsComponent,
-    FaqComponent  
+    FaqComponent,
+    HeaderComponent  
   ],
   imports: [
     BrowserModule,
