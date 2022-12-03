@@ -12,6 +12,7 @@ import { SupportComponent } from './components/header/contactus/support/support.
 import { NewsComponent } from './components/header/contactus/news/news.component';
 import { FaqComponent } from './components/header/contactus/faq/faq.component';
 import { HeaderComponent } from './components/header/header.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HeaderComponent } from './components/header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
