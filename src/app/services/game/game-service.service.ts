@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { map, Observable } from 'rxjs';
+import { map, Observable, Subject } from 'rxjs';
 import { game } from 'src/app/models/game.models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameServiceService {
+
+  games:game[]=[];
+  private subject = new Subject<any>();
 
   constructor(private http: HttpClient) { }
 
@@ -33,5 +36,13 @@ export class GameServiceService {
   getGamesById(id:number)
   {
     return this.http.get<game>(this.apiUrl+"SearchedGamesById/"+id);
+  }
+
+  sendClickEvent(games:game[]){
+    this.subject.next(games);
+  }
+
+  getClickEvent():Observable<game[]>{
+     return this.subject.asObservable();
   }
 }

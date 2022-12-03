@@ -1,5 +1,5 @@
 export interface game{
-    Name:string,
-    Price:number,
-    GameDetails:string
+    name:string,
+    price:number,
+    Gamedetails:string
 }

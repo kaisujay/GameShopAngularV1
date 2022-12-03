@@ -21,13 +21,12 @@ export class SearchGameComponent implements OnInit {
     // this.router.navigate(['/Games',value]);
     // this.searchRoute=this.route.snapshot.paramMap.get('searchRoute')!;
         
-    this.ngOnInit();
     this.searchRoute=value!;
     if(this.searchRoute.length > 0){
       this.gameData.getGamesByName(this.searchRoute).subscribe((data)=>
       {
         this.games=data;
-        console.warn(this.games);
+        //console.warn(this.games);
         
       });
     }
@@ -35,9 +34,10 @@ export class SearchGameComponent implements OnInit {
       this.gameData.getGames().subscribe((data)=>
       {
         this.games=data;
-        console.warn(this.games);
+        //console.warn(this.games);
       });
     }
-
+    this.gameData.sendClickEvent(this.games);
   }
+
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GameServiceService } from 'src/app/services/game/game-service.service';
+import { Subscription } from 'rxjs'
+import { game } from 'src/app/models/game.models';
 
 @Component({
   selector: 'app-game',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  constructor() {}
+  games:game[]=[];
+  clickEventSubscription:Subscription;
 
-  ngOnInit(): void {
+  constructor(private gameData: GameServiceService) {
+    
   }
 
+  ngOnInit(): void {
+    this.clickEventSubscription= this.gameData.getClickEvent().subscribe((data)=>{
+      this.games=data;
+    })
+  }
 }
