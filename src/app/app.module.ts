@@ -13,6 +13,8 @@ import { NewsComponent } from './components/header/contactus/news/news.component
 import { FaqComponent } from './components/header/contactus/faq/faq.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ContactusComponent } from './components/header/contactus/contactus.component';
+import { PlayerComponent } from './components/header/player/player.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SupportComponent,
     NewsComponent,
     FaqComponent,
-    HeaderComponent  
+    HeaderComponent,
+    ContactusComponent,
+    PlayerComponent  
   ],
   imports: [
     BrowserModule,
