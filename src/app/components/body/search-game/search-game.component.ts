@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { game } from 'src/app/models/game.models';
 import { GameServiceService } from 'src/app/services/game/game-service.service';
 
@@ -10,37 +11,33 @@ import { GameServiceService } from 'src/app/services/game/game-service.service';
 export class SearchGameComponent implements OnInit {
 
   games:game[]=[];
-  searchRoute:string;
-  text:string='';
 
-  constructor(private gameData: GameServiceService) { }
+  constructor(private gameData: GameServiceService, private router:Router) { }
 
   ngOnInit(): void {    
   }
 
   getSearchedGames(value:string){    
     // this.router.navigate(['/Games',value]);
-    // this.searchRoute=this.route.snapshot.paramMap.get('searchRoute')!;
+    // this.searchRoute=this.route.snapshot.paramMap.get('searchRoute')!;    
 
-    this.gameData.updateData("Testing");
-        
-    this.searchRoute=value!;
-    if(this.searchRoute.length > 0){
-      this.gameData.getGamesByName(this.searchRoute).subscribe((data)=>
-      {
-        this.games=data;
-        //console.warn(this.games);
-        
-      });
-    }
-    else{
+    if(value.length <= 0){
       this.gameData.getGames().subscribe((data)=>
       {
         this.games=data;
-        //console.warn(this.games);
+        this.gameData.updateData(this.games);
+
+        this.router.navigate(['/Games']);
       });
     }
-    this.gameData.sendClickEvent(this.games);
-  }
+    else{
+      this.gameData.getGamesByName(value).subscribe((data)=>
+      {
+        this.games=data;
+        this.gameData.updateData(this.games);
 
+        this.router.navigate(['/Games']);
+      });
+    }      
+  }
 }

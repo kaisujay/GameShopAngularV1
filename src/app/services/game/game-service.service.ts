@@ -9,8 +9,7 @@ import { game } from 'src/app/models/game.models';
 export class GameServiceService {
 
   games:game[]=[];
-  private subject = new Subject<any>();
-  private behaviorSubject = new BehaviorSubject<string>("Default");
+  private behaviorSubject = new BehaviorSubject<game[]>({} as game[]);
   public shareData = this.behaviorSubject.asObservable();
 
   constructor(private http: HttpClient) { }
@@ -39,16 +38,8 @@ export class GameServiceService {
   {
     return this.http.get<game>(this.apiUrl+"SearchedGamesById/"+id);
   }
-
-  sendClickEvent(games:game[]){
-    this.subject.next(games);
-  }
-
-  getClickEvent():Observable<game[]>{
-     return this.subject.asObservable();
-  }
-
-  updateData(text:string){
-    this.behaviorSubject.next(text);
+  
+  updateData(games:game[]){        
+    this.behaviorSubject.next(games);  
   }
 }

@@ -11,19 +11,14 @@ import { game } from 'src/app/models/game.models';
 export class GameComponent implements OnInit {
 
   games:game[]=[];
-  clickEventSubscription:Subscription;
-  text:string='';
 
   constructor(private gameData: GameServiceService) {
     
   }
 
   ngOnInit(): void {
-    this.gameData.shareData.subscribe(x=>this.text=x);
-    this.clickEventSubscription= this.gameData.getClickEvent().subscribe((data)=>{
-      this.games=data;
-    })
-    console.warn(this.text);
-    
+    this.gameData.shareData.subscribe((data : game[])=>      
+        this.games=data        
+      );  
   }
 }
