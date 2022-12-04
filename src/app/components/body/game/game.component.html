@@ -1,6 +1,19 @@
-<p>game works!</p>
-<ul>
-    <li *ngFor="let game of games">
-        {{ game.name }} | {{ game.price }} | {{ game.gameDetails }}
-    </li>
-</ul>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let game of games">
+        <div class="card">
+            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
+                alt="Hollywood Sign on The Hill" />
+            <div class="card-body">
+                <h5 class="card-title">{{ game.name }}</h5>
+                <p>{{ game.price | currency:'USD'}}</p>
+                <p class="card-text">
+                    {{ game.gameDetails | slice:0:20 }}...
+                </p>
+                <p>
+                    <button class="btn btn-outline-info" 
+                    (click)="showGameDetails(game.id)">Details</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

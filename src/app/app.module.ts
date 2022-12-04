@@ -32,7 +32,7 @@ import { Error404Component } from './components/shared/error404/error404.compone
     ContactusComponent,
     PlayerComponent,
     SearchGameComponent,
-    Error404Component  
+    Error404Component 
   ],
   imports: [
     BrowserModule,

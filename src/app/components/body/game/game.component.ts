@@ -21,4 +21,8 @@ export class GameComponent implements OnInit {
         this.games=data        
       );  
   }
+
+  showGameDetails(value:number){
+    console.warn(value);    
+  }
 }

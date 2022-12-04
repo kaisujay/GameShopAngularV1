@@ -16,8 +16,8 @@ const routes: Routes = [
   { path: 'News', component: NewsComponent },
   { path: 'FAQ', component: FaqComponent },
   { path: 'AboutUs', component: AboutusComponent },
-  { path: '404', component: Error404Component },
-  { path: '**', redirectTo: '/404' }
+  { path: 'error', component: Error404Component },
+  { path: '**', redirectTo: '/error' }
 ];
 
 @NgModule({

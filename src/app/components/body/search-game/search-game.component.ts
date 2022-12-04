@@ -11,6 +11,7 @@ import { GameServiceService } from 'src/app/services/game/game-service.service';
 export class SearchGameComponent implements OnInit {
 
   games:game[]=[];
+  errorMessage:string='';
 
   constructor(private gameData: GameServiceService, private router:Router) { }
 
@@ -24,6 +25,7 @@ export class SearchGameComponent implements OnInit {
     if(value.length <= 0){
       this.gameData.getGames().subscribe((data)=>
       {
+        this.errorMessage='';
         this.games=data;
         this.gameData.updateData(this.games);
 
@@ -33,10 +35,15 @@ export class SearchGameComponent implements OnInit {
     else{
       this.gameData.getGamesByName(value).subscribe((data)=>
       {
+        this.errorMessage='';
         this.games=data;
         this.gameData.updateData(this.games);
 
         this.router.navigate(['/Games']);
+      },(error)=>{
+        this.games=[];
+        this.gameData.updateData(this.games);
+        this.errorMessage=error.error;                   
       });
     }      
   }
