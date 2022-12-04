@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GameServiceService } from 'src/app/services/game/game-service.service';
 import { Subscription } from 'rxjs'
 import { game } from 'src/app/models/game.models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -12,7 +13,7 @@ export class GameComponent implements OnInit {
 
   games:game[]=[];
 
-  constructor(private gameData: GameServiceService) {
+  constructor(private gameData: GameServiceService,private router:Router) {
     
   }
 
@@ -23,6 +24,6 @@ export class GameComponent implements OnInit {
   }
 
   showGameDetails(value:number){
-    console.warn(value);    
+    this.router.navigate(['/Games',value]);    
   }
 }

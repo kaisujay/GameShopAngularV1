@@ -1,1 +1,102 @@
-<p>game-details works!</p>
+<div class="container">
+    <div class="col-lg-11 border p-3 main-section bg-white">
+        <div class="row m-0">
+            <div class="col-lg-6 left-side-product-box pb-3">
+                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="border p-3">                
+            </div>
+            <div class="col-lg-6">
+                <div class="right-side-pro-detail border p-3 m-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <span></span>
+                            <p class="m-0 p-0">{{ game.name }}</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <p class="m-0 p-0 price-pro">{{ game.price | currency:'USD'}}</p>
+                            <hr class="p-0 m-0">
+                        </div>
+                        <div class="col-lg-12 pt-2">
+                            <h5>Game Detail</h5>
+                            <span>{{ game.gameDetails }}</span>
+                            <hr class="m-0 pt-2 mt-2">
+                        </div>
+                        <div class="col-lg-12">
+                            <p class="tag-section"><strong>Platform : </strong>
+                                <a href="">PC</a>&nbsp;<a href="">XBOX</a>&nbsp;<a href="">Play Station</a></p>
+                        </div>
+                        <div class="col-lg-12">
+                            <h6>Quantity :</h6>
+                            <input type="number" class="form-control text-center w-100" value="1">
+                        </div>
+                        <div class="col-lg-12 mt-3">
+                            <div class="row">
+                                <div class="col-lg-6 pb-2">
+                                    <a href="#" class="btn btn-outline-secondary w-100">Add To Cart</a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <a href="#" class="btn btn-outline-success w-100">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center pt-3">                
+            </div>
+        </div>        
+    </div>
+</div>
+
+<!-- <section style="background-color: #eee;">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xl-4">
+          <div class="card" style="border-radius: 15px;">
+            <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
+              data-mdb-ripple-color="light">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp"
+                style="border-top-left-radius: 15px; border-top-right-radius: 15px;" class="img-fluid"
+                alt="Laptop" />
+              <a href="#!">
+                <div class="mask"></div>
+              </a>
+            </div>
+            <div class="card-body pb-0">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p><a href="#!" class="text-dark">Dell Xtreme 270</a></p>
+                  <p class="small text-muted">Laptops</p>
+                </div>
+                <div>
+                  <div class="d-flex flex-row justify-content-end mt-1 mb-4 text-danger">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p class="small text-muted">Rated 4.0/5</p>
+                </div>
+              </div>
+            </div>
+            <hr class="my-0" />
+            <div class="card-body pb-0">
+              <div class="d-flex justify-content-between">
+                <p><a href="#!" class="text-dark">$3,999</a></p>
+                <p class="text-dark">#### 8787</p>
+              </div>
+              <p class="small text-muted">VISA Platinum</p>
+            </div>
+            <hr class="my-0" />
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
+                <a href="#!" class="text-dark fw-bold">Cancel</a>
+                <button type="button" class="btn btn-primary">Buy now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
