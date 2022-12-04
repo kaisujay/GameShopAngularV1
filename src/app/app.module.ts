@@ -16,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactusComponent } from './components/header/contactus/contactus.component';
 import { PlayerComponent } from './components/header/player/player.component';
 import { SearchGameComponent } from './components/body/search-game/search-game.component';
+import { Error404Component } from './components/shared/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SearchGameComponent } from './components/body/search-game/search-game.c
     HeaderComponent,
     ContactusComponent,
     PlayerComponent,
-    SearchGameComponent  
+    SearchGameComponent,
+    Error404Component  
   ],
   imports: [
     BrowserModule,

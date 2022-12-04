@@ -6,6 +6,7 @@ import { NewsComponent } from './components/header/contactus/news/news.component
 import { SupportComponent } from './components/header/contactus/support/support.component';
 import { GameComponent } from './components/body/game/game.component';
 import { SearchGameComponent } from './components/body/search-game/search-game.component';
+import { Error404Component } from './components/shared/error404/error404.component';
 
 const routes: Routes = [
   { path: "Search", component: SearchGameComponent },
@@ -14,7 +15,9 @@ const routes: Routes = [
   { path: 'Support', component: SupportComponent },
   { path: 'News', component: NewsComponent },
   { path: 'FAQ', component: FaqComponent },
-  { path: 'AboutUs', component: AboutusComponent }  
+  { path: 'AboutUs', component: AboutusComponent },
+  { path: '404', component: Error404Component },
+  { path: '**', redirectTo: '/404' }
 ];
 
 @NgModule({
