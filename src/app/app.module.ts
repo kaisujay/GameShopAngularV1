@@ -17,6 +17,7 @@ import { ContactusComponent } from './components/header/contactus/contactus.comp
 import { PlayerComponent } from './components/header/player/player.component';
 import { SearchGameComponent } from './components/body/search-game/search-game.component';
 import { Error404Component } from './components/shared/error404/error404.component';
+import { GameDetailsComponent } from './components/body/game-details/game-details.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { Error404Component } from './components/shared/error404/error404.compone
     ContactusComponent,
     PlayerComponent,
     SearchGameComponent,
-    Error404Component 
+    Error404Component,
+    GameDetailsComponent 
   ],
   imports: [
     BrowserModule,
