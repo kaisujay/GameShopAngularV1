@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { map, Observable, Subject } from 'rxjs';
+import { map, Observable, Subject, BehaviorSubject } from 'rxjs';
 import { game } from 'src/app/models/game.models';
 
 @Injectable({
@@ -10,6 +10,8 @@ export class GameServiceService {
 
   games:game[]=[];
   private subject = new Subject<any>();
+  private behaviorSubject = new BehaviorSubject<string>("Default");
+  public shareData = this.behaviorSubject.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -44,5 +46,9 @@ export class GameServiceService {
 
   getClickEvent():Observable<game[]>{
      return this.subject.asObservable();
+  }
+
+  updateData(text:string){
+    this.behaviorSubject.next(text);
   }
 }
