@@ -24,6 +24,9 @@ export class GameDetailsComponent implements OnInit {
     this.gameData.getGamesById(this.routeValue).subscribe((data)=>
     {
       this.game=data;          
+    },
+    (error)=>{
+      this.router.navigate(['/error']);
     });
   }
 
