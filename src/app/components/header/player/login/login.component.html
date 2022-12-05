@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div class="col-lg-4 mx-auto">
+    <form [formGroup]="userLogInForm" (ngSubmit)="getFormValue()">
+        <div class="form-outline mb-4">
+            <label class="form-label" for="txtBoxUserName">User Name</label>
+            <input type="text" ngModel formControlName="txtBoxUserName"
+            id="txtBoxUserName" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <label class="form-label" for="txtBoxPassword">Password</label>
+            <input type="password" ngModel formControlName="txtBoxPassword"
+            id="txtBoxPassword" class="form-control" />            
+        </div>
+
+        <!-- <div class="form-check d-flex justify-content-center mb-4">
+            <input class="form-check-input me-2" type="checkbox" value="" id="form5Example3" checked />
+            <label class="form-check-label" for="form5Example3">
+                I have read and agree to the terms
+            </label>
+        </div> -->
+
+        <button type="submit" class="btn btn-outline-primary btn-block mb-4">Log In</button>
+
+        <div class="text-center">
+            <p>Not a member? <a (click)="gotoRegister()">Register</a></p>
+
+        </div>
+    </form>
+</div>

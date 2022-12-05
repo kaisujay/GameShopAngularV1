@@ -19,6 +19,7 @@ import { SearchGameComponent } from './components/body/search-game/search-game.c
 import { Error404Component } from './components/shared/error404/error404.component';
 import { GameDetailsComponent } from './components/body/game-details/game-details.component';
 import { DisplayPlayerComponent } from './components/body/player/display-player/display-player.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { DisplayPlayerComponent } from './components/body/player/display-player/
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

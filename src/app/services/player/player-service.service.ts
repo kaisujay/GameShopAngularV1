@@ -24,4 +24,10 @@ export class PlayerServiceService {
   getPlayerByUserName(value:string){
     return this.http.get<displayPlayer>(this.apiUrl+"/byusername/"+value);
   }
+
+  signInPlayer(logInPlayer:logInPlayer){
+    return this.http.post(this.apiUrl+"/login/",logInPlayer,{
+      responseType:'text',  // If we don't use "responseType" we will get error, because API will return a toke and this Angular will not know what is the response
+    });
+  }
 }

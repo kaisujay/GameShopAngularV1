@@ -8,10 +8,12 @@ import { GameComponent } from './components/body/game/game.component';
 import { SearchGameComponent } from './components/body/search-game/search-game.component';
 import { Error404Component } from './components/shared/error404/error404.component';
 import { GameDetailsComponent } from './components/body/game-details/game-details.component';
-import { DisplayPlayerComponent } from './components/body/player/display-player/display-player.component';
+import { LoginComponent } from './components/header/player/login/login.component';
+import { RegisterComponent } from './components/header/player/register/register.component';
 
 const routes: Routes = [
-  { path: "Players", component: DisplayPlayerComponent },
+  { path: "Players", component: LoginComponent },
+  { path: "Register", component: RegisterComponent },
   { path: "Search", component: SearchGameComponent },
   { path: "Games/:searchRoute", component: GameDetailsComponent },
   { path: "", component: GameComponent },
