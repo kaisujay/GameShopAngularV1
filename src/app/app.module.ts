@@ -18,7 +18,6 @@ import { PlayerComponent } from './components/header/player/player.component';
 import { SearchGameComponent } from './components/body/search-game/search-game.component';
 import { Error404Component } from './components/shared/error404/error404.component';
 import { GameDetailsComponent } from './components/body/game-details/game-details.component';
-import { DisplayPlayerComponent } from './components/body/player/display-player/display-player.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptorInterceptor } from './services/player-auth/auth-interceptor.interceptor';
 import { LogoutComponent } from './components/header/player/logout/logout.component';
@@ -39,7 +38,6 @@ import { LogoutComponent } from './components/header/player/logout/logout.compon
     SearchGameComponent,
     Error404Component,
     GameDetailsComponent,
-    DisplayPlayerComponent,
     LogoutComponent 
   ],
   imports: [
