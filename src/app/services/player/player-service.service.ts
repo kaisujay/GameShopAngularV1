@@ -30,4 +30,10 @@ export class PlayerServiceService {
       responseType:'text',  // If we don't use "responseType" we will get error, because API will return a toke and this Angular will not know what is the response
     });
   }
+
+  registerNewPlayer(registerPlayer:registerPlayer){
+    return this.http.post(this.apiUrl+"/Create",registerPlayer,{
+      responseType:'text',  // If we don't use "responseType" we will get error, because API will return a toke and this Angular will not know what is the response
+    });
+  }
 }

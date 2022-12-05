@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     this.logInPlayerModel.userName=this.userLogInForm.value.txtBoxUserName?.toString();
     this.logInPlayerModel.password=this.userLogInForm.value.txtBoxPassword?.toString();
 
-    this.loggedInPlayer=this.logInPlayerModel.userName || '';
+    this.loggedInPlayer=this.logInPlayerModel.userName?.toUpperCase() || '';
     this.playerData.signInPlayer(this.logInPlayerModel).subscribe((data)=>{      
       
       localStorage.setItem("receivedToken",data);
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     },(error)=>{
       localStorage.removeItem('receivedToken');
       localStorage.removeItem('loggedInPlayer');
-      console.warn(error);      
+      console.warn(error.error);      
 
     });
   }

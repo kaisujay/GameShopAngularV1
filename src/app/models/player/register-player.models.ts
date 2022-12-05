@@ -4,5 +4,5 @@ export interface registerPlayer{
     email?:string,
     password?:string,
     confirmedPassword?:string,
-    dateOfBirth?:Date
+    dateOfBirth?:string
 }

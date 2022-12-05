@@ -1,1 +1,46 @@
-<p>register works!</p>
+<div class="col-lg-4 mx-auto">
+    <form [formGroup]="userRegisterForm" (ngSubmit)="getFormValue()">
+
+        <div class="form-outline mb-4">
+            <label class="form-label" for="txtBoxName">Name</label>
+            <input type="text" ngModel formControlName="txtBoxName"
+            id="txtBoxName" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <label class="form-label" for="txtBoxUserName">User Name</label>
+            <input type="text" ngModel formControlName="txtBoxUserName"
+            id="txtBoxUserName" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <label class="form-label" for="txtBoxEmail">Email</label>
+            <input type="text" ngModel formControlName="txtBoxEmail"
+            id="txtBoxEmail" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <label class="form-label" for="txtBoxPassword">Password</label>
+            <input type="password" ngModel formControlName="txtBoxPassword"
+            id="txtBoxPassword" class="form-control" />            
+        </div>
+
+        <div class="form-outline mb-4">
+            <label class="form-label" for="txtBoxConfirmPassword">Confirm Password</label>
+            <input type="password" ngModel formControlName="txtBoxConfirmPassword"
+            id="txtBoxConfirmPassword" class="form-control" />            
+        </div>
+
+        <div class="form-outline mb-4">
+            <label class="form-label" for="txtBoxDateOfBirth">Date Of Birth</label>
+            <input type="date" ngModel formControlName="txtBoxDateOfBirth"
+            id="txtBoxDateOfBirth" class="form-control" />            
+        </div>
+
+        <button type="submit" class="btn btn-outline-primary btn-block mb-4">Register</button>
+
+        <div class="text-center">
+            <p>Already a member? <a routerLink="/Players">LogIn</a></p>
+        </div>
+    </form>
+</div>
