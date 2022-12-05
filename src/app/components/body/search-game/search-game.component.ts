@@ -16,6 +16,14 @@ export class SearchGameComponent implements OnInit {
   constructor(private gameData: GameServiceService, private router:Router) { }
 
   ngOnInit(): void {    
+    this.gameData.getGames().subscribe((data)=>
+      {
+        this.errorMessage='';
+        this.games=data;
+        this.gameData.updateData(this.games);
+
+        this.router.navigate(['/Games']);
+      });
   }
 
   getSearchedGames(value:string){    

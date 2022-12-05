@@ -12,6 +12,7 @@ import { GameDetailsComponent } from './components/body/game-details/game-detail
 const routes: Routes = [
   { path: "Search", component: SearchGameComponent },
   { path: "Games/:searchRoute", component: GameDetailsComponent },
+  { path: "", component: GameComponent },
   { path: "Games", component: GameComponent },
   { path: 'Support', component: SupportComponent },
   { path: 'News', component: NewsComponent },
