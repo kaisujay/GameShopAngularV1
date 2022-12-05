@@ -10,9 +10,11 @@ import { Error404Component } from './components/shared/error404/error404.compone
 import { GameDetailsComponent } from './components/body/game-details/game-details.component';
 import { LoginComponent } from './components/header/player/login/login.component';
 import { RegisterComponent } from './components/header/player/register/register.component';
+import { LogoutComponent } from './components/header/player/logout/logout.component';
 
 const routes: Routes = [
   { path: "Players", component: LoginComponent },
+  { path: "LogOut", component: LogoutComponent },
   { path: "Register", component: RegisterComponent },
   { path: "Search", component: SearchGameComponent },
   { path: "Games/:searchRoute", component: GameDetailsComponent },

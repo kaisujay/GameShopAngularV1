@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   logInPlayerModel:logInPlayer={};
+  loggedInPlayer:string='';
 
   userLogInForm=new FormGroup({
     txtBoxUserName:new FormControl(''),
@@ -25,16 +26,21 @@ export class LoginComponent implements OnInit {
   
   getFormValue()
   {
+    this.loggedInPlayer='';
     this.logInPlayerModel.userName=this.userLogInForm.value.txtBoxUserName?.toString();
     this.logInPlayerModel.password=this.userLogInForm.value.txtBoxPassword?.toString();
 
+    this.loggedInPlayer=this.logInPlayerModel.userName || '';
     this.playerData.signInPlayer(this.logInPlayerModel).subscribe((data)=>{      
       
-      localStorage.setItem("receivedToken",data)
+      localStorage.setItem("receivedToken",data);
+      localStorage.setItem("loggedInPlayer",this.loggedInPlayer);
       console.warn("LogIn Successful ");      
+      this.router.navigate(['/Games']);
 
     },(error)=>{
-      
+      localStorage.removeItem('receivedToken');
+      localStorage.removeItem('loggedInPlayer');
       console.warn(error);      
 
     });
