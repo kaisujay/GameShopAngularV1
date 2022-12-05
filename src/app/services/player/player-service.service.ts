@@ -18,10 +18,10 @@ export class PlayerServiceService {
   apiUrl:string="http://localhost:12969/api/player";
 
   getPlayerById(value:string){
-    this.http.get<displayPlayer>(this.apiUrl+"/byid/"+value);
+    return this.http.get<displayPlayer>(this.apiUrl+"/byid/"+value);
   }
 
   getPlayerByUserName(value:string){
-    this.http.get<displayPlayer>(this.apiUrl+"/byusername/"+value);
+    return this.http.get<displayPlayer>(this.apiUrl+"/byusername/"+value);
   }
 }

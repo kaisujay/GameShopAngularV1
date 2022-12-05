@@ -18,6 +18,7 @@ import { PlayerComponent } from './components/header/player/player.component';
 import { SearchGameComponent } from './components/body/search-game/search-game.component';
 import { Error404Component } from './components/shared/error404/error404.component';
 import { GameDetailsComponent } from './components/body/game-details/game-details.component';
+import { DisplayPlayerComponent } from './components/body/player/display-player/display-player.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { GameDetailsComponent } from './components/body/game-details/game-detail
     PlayerComponent,
     SearchGameComponent,
     Error404Component,
-    GameDetailsComponent 
+    GameDetailsComponent,
+    DisplayPlayerComponent 
   ],
   imports: [
     BrowserModule,
