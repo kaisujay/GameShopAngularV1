@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -20,6 +20,7 @@ import { Error404Component } from './components/shared/error404/error404.compone
 import { GameDetailsComponent } from './components/body/game-details/game-details.component';
 import { DisplayPlayerComponent } from './components/body/player/display-player/display-player.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthInterceptorInterceptor } from './services/player-auth/auth-interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgbModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
