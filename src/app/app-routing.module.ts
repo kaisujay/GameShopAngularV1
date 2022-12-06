@@ -11,11 +11,13 @@ import { GameDetailsComponent } from './components/body/game-details/game-detail
 import { LoginComponent } from './components/header/player/login/login.component';
 import { RegisterComponent } from './components/header/player/register/register.component';
 import { LogoutComponent } from './components/header/player/logout/logout.component';
+import { CartComponent } from './components/header/cart/cart.component';
 
 const routes: Routes = [
   { path: "Players", component: LoginComponent },
   { path: "LogOut", component: LogoutComponent },
   { path: "Register", component: RegisterComponent },
+  { path: "Cart", component: CartComponent },
   { path: "Search", component: SearchGameComponent },
   { path: "Games/:searchRoute", component: GameDetailsComponent },
   { path: "", component: GameComponent },

@@ -21,6 +21,7 @@ import { GameDetailsComponent } from './components/body/game-details/game-detail
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptorInterceptor } from './services/player-auth/auth-interceptor.interceptor';
 import { LogoutComponent } from './components/header/player/logout/logout.component';
+import { CartComponent } from './components/header/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LogoutComponent } from './components/header/player/logout/logout.compon
     SearchGameComponent,
     Error404Component,
     GameDetailsComponent,
-    LogoutComponent 
+    LogoutComponent,
+    CartComponent 
   ],
   imports: [
     BrowserModule,
