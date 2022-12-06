@@ -22,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptorInterceptor } from './services/player-auth/auth-interceptor.interceptor';
 import { LogoutComponent } from './components/header/player/logout/logout.component';
 import { CartComponent } from './components/header/cart/cart.component';
+import { DisplayCartComponent } from './components/header/cart/display-cart/display-cart.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CartComponent } from './components/header/cart/cart.component';
     Error404Component,
     GameDetailsComponent,
     LogoutComponent,
-    CartComponent 
+    CartComponent,
+    DisplayCartComponent 
   ],
   imports: [
     BrowserModule,
