@@ -12,11 +12,13 @@ import { LoginComponent } from './components/header/player/login/login.component
 import { RegisterComponent } from './components/header/player/register/register.component';
 import { LogoutComponent } from './components/header/player/logout/logout.component';
 import { DisplayCartComponent } from './components/header/cart/display-cart/display-cart.component';
+import { CartComponent } from './components/header/cart/cart.component';
 
 const routes: Routes = [
   { path: "Players", component: LoginComponent },
   { path: "LogOut", component: LogoutComponent },
   { path: "Register", component: RegisterComponent },
+  { path: "AddToCart", component: CartComponent },
   { path: "CartItems", component: DisplayCartComponent },
   { path: "Search", component: SearchGameComponent },
   { path: "Games/:searchRoute", component: GameDetailsComponent },
