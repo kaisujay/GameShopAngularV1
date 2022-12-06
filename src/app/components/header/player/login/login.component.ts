@@ -35,12 +35,14 @@ export class LoginComponent implements OnInit {
       
       localStorage.setItem("receivedToken",data);
       localStorage.setItem("loggedInPlayer",this.loggedInPlayer);
-      console.warn("LogIn Successful ");      
+      this.getPlayerId(this.loggedInPlayer);
+      console.warn("LogIn Successful "+data);      
       this.router.navigate(['/Games']);
 
     },(error)=>{
       localStorage.removeItem('receivedToken');
       localStorage.removeItem('loggedInPlayer');
+      localStorage.removeItem('setPlayerId');
       console.warn(error.error);      
 
     });
@@ -48,5 +50,11 @@ export class LoginComponent implements OnInit {
   
   gotoRegister(){
     this.router.navigate(['/Register']);
+  }
+
+  private getPlayerId(value:string){
+    this.playerData.getPlayerByUserName(value).subscribe((data)=>{
+      localStorage.setItem('setPlayerId',data.playerId || '');
+    });
   }
 }
