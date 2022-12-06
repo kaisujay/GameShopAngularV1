@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     },(error)=>{
       localStorage.removeItem('receivedToken');
       localStorage.removeItem('loggedInPlayer');
-      localStorage.removeItem('setPlayerId');
+      localStorage.removeItem('receivedPlayerId');
       console.warn(error.error);      
 
     });
@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
 
   private getPlayerId(value:string){
     this.playerData.getPlayerByUserName(value).subscribe((data)=>{
-      localStorage.setItem('setPlayerId',data.playerId || '');
+      localStorage.setItem('receivedPlayerId',data.playerId || '');
     });
   }
 }

@@ -1,1 +1,33 @@
-<p>display-cart works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p>
+                Cart Details of - <b>{{displayCart[0].playerUserName}}</b>
+            </p>
+        </div>
+        <div class="col-md-auto">
+            <p>
+                <b>{{displayCart[0].playerEmail}}</b>
+            </p>
+        </div>
+    </div>
+</div>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Game Name</th>
+            <th scope="col">Game Price</th>
+            <th scope="col">Game Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cart of displayCart ; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{cart.gameName}}</td>
+            <td>{{cart.gamePrice}}</td>
+            <td>{{cart.gameDetails | slice:0:25}}}</td>
+        </tr>        
+    </tbody>
+</table>

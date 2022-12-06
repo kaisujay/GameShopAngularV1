@@ -21,7 +21,7 @@
             <app-search-game></app-search-game>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cart(0)</a>
+                    <a class="nav-link" routerLink="CartItems">Cart(0)</a>
                 </li>
                 <li class="nav-item">
                     <div *ngIf="isPlayerLoggedIn == true ; then forIfBlock  else forElseBlock"></div>                    
