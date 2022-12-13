@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { displayPlayer } from 'src/app/models/player/display-player.models';
 import { logInPlayer } from 'src/app/models/player/login-player.models';
 import { registerPlayer } from 'src/app/models/player/register-player.models';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class PlayerServiceService {
 
   constructor(private http:HttpClient) { }
 
-  apiUrl:string="http://localhost:12969/api/player";
+  apiUrl:string=environment.apiUrl+"player";
 
   getPlayerById(value:string){
     return this.http.get<displayPlayer>(this.apiUrl+"/byid/"+value);
