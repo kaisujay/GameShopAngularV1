@@ -19,9 +19,11 @@ export class HeaderComponent implements OnInit {
     
     this.route.events.subscribe((data)=>{
       if(data){
-        if(localStorage.getItem('receivedToken') && localStorage.getItem('loggedInPlayer')){
+        if(sessionStorage.getItem('receivedToken') && sessionStorage.getItem('loggedInPlayer')){
+        // if(localStorage.getItem('receivedToken') && localStorage.getItem('loggedInPlayer')){
           this.isPlayerLoggedIn=true;
-          this.playerUserName=localStorage.getItem('loggedInPlayer') || '';
+          this.playerUserName=sessionStorage.getItem('loggedInPlayer') || '';
+          // this.playerUserName=localStorage.getItem('loggedInPlayer') || '';
         }
         else{
           this.isPlayerLoggedIn=false;

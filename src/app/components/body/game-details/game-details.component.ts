@@ -39,7 +39,8 @@ export class GameDetailsComponent implements OnInit {
 
   addingToCart(){    
     this.createCartModel.gameId=Number(this.game.id);
-    this.createCartModel.playerId=localStorage.getItem('receivedPlayerId') || '';
+    this.createCartModel.playerId=sessionStorage.getItem('receivedPlayerId') || '';
+    // this.createCartModel.playerId=localStorage.getItem('receivedPlayerId') || '';
 
     this.cartData.createCart(this.createCartModel).subscribe((data)=>{
       console.warn("Added to Cart");      

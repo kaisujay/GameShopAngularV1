@@ -33,16 +33,21 @@ export class LoginComponent implements OnInit {
     this.loggedInPlayer=this.logInPlayerModel.userName?.toUpperCase() || '';
     this.playerData.signInPlayer(this.logInPlayerModel).subscribe((data)=>{      
       
-      localStorage.setItem("receivedToken",data);
-      localStorage.setItem("loggedInPlayer",this.loggedInPlayer);
+      sessionStorage.setItem("receivedToken",data); // Updated "localStorage" to "sessionStorage". Now player have to login everytime the application lunch
+      sessionStorage.setItem("loggedInPlayer",this.loggedInPlayer);
+      // localStorage.setItem("receivedToken",data);
+      // localStorage.setItem("loggedInPlayer",this.loggedInPlayer);
       this.getPlayerId(this.loggedInPlayer);
       console.warn("LogIn Successful "+data);      
       this.router.navigate(['/Games']);
 
     },(error)=>{
-      localStorage.removeItem('receivedToken');
-      localStorage.removeItem('loggedInPlayer');
-      localStorage.removeItem('receivedPlayerId');
+      sessionStorage.removeItem('receivedToken');
+      sessionStorage.removeItem('loggedInPlayer');
+      sessionStorage.removeItem('receivedPlayerId');
+      // localStorage.removeItem('receivedToken');
+      // localStorage.removeItem('loggedInPlayer');
+      // localStorage.removeItem('receivedPlayerId');
       console.warn(error.error);      
 
     });
@@ -54,7 +59,8 @@ export class LoginComponent implements OnInit {
 
   private getPlayerId(value:string){
     this.playerData.getPlayerByUserName(value).subscribe((data)=>{
-      localStorage.setItem('receivedPlayerId',data.playerId || '');
+      sessionStorage.setItem('receivedPlayerId',data.playerId || '');
+      // localStorage.setItem('receivedPlayerId',data.playerId || '');
     });
   }
 }

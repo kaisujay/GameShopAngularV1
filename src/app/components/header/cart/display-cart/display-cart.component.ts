@@ -16,7 +16,8 @@ export class DisplayCartComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.playerId=localStorage.getItem('receivedPlayerId') || '';
+    this.playerId=sessionStorage.getItem('receivedPlayerId') || '';
+    // this.playerId=localStorage.getItem('receivedPlayerId') || '';
 
     this.cartData.displayCart(this.playerId).subscribe((data)=>{
       this.displayCart=data;
