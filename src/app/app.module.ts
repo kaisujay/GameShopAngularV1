@@ -18,7 +18,7 @@ import { PlayerComponent } from './components/header/player/player.component';
 import { SearchGameComponent } from './components/body/search-game/search-game.component';
 import { Error404Component } from './components/shared/error404/error404.component';
 import { GameDetailsComponent } from './components/body/game-details/game-details.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptorInterceptor } from './services/player-auth/auth-interceptor.interceptor';
 import { LogoutComponent } from './components/header/player/logout/logout.component';
 import { CartComponent } from './components/header/cart/cart.component';
@@ -49,7 +49,8 @@ import { DisplayCartComponent } from './components/header/cart/display-cart/disp
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     {

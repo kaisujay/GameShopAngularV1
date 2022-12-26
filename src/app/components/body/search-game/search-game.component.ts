@@ -26,6 +26,11 @@ export class SearchGameComponent implements OnInit {
       });
   }
 
+  searchTextBoxQuick:string;
+  getSearchGamesQuick(){
+    this.getSearchedGames(this.searchTextBoxQuick);
+  }
+
   getSearchedGames(value:string){    
     // this.router.navigate(['/Games',value]);
     // this.searchRoute=this.route.snapshot.paramMap.get('searchRoute')!;    
